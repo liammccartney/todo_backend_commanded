@@ -8,7 +8,7 @@ defmodule TodoBackendWeb.Router do
   scope "/api", TodoBackendWeb do
     pipe_through :api
 
-    resources "/todos", TodoController
+    resources "/todos", TodoController, except: [:new]
     delete "/todos", TodoController, :delete_all
     put "/todos/:id/restore", TodoController, :restore
   end
